@@ -1,48 +1,41 @@
-import Box from "./Box";
-import { NavLink, Switch, Route } from "react-router-dom";
+import Boxes from "./Boxes";
+import Form from "./Form";
+import { Switch, Route } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      <h1>This is the HOME page</h1>
+      <h1>This is the Home page</h1>
     </div>
-  )
-}
+  );
+};
 
 const About = () => {
   return (
     <div>
       <h1>This is the About page</h1>
     </div>
-  )
-}
+  );
+};
 
-const Contact = () => {
+const Contacts = () => {
   return (
     <div>
-      <h1>This is the Contact page</h1>
+      <h1>This is the Contacts page</h1>
     </div>
-  )
-}
+  );
+};
 
 const Main = () => {
   return (
     <main>
-      <nav>
-        <ul>
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="About">About</NavLink></li>
-          <li><NavLink to="/Contact">Contact</NavLink></li>
-        </ul>
-      </nav>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/About" component={About} />
-        <Route path="/Contact" component={Contact} />
+        <Route path="/about" component={About} />
+        <Route path="/contacts" component={Contacts} />
+        <Route path="/boxes" component={Boxes} />
+        <Route path="/form" component={Form} />
       </Switch>
-      <Box name="Maria" title="CEO" age="29" />
-      <Box name="Jen" title="Developper" age="25" />
-      <Box name="James" title="Designer" age="28" />
     </main>
   );
 };
